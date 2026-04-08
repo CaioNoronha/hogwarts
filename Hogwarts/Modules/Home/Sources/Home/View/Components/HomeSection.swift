@@ -59,13 +59,15 @@ internal struct HomeSuggestionsSection: View {
 // MARK: - Tasks Section
 internal struct HomeTasksSection: View {
     private let tasks: [HomeData.Task]
+    private let title: String
 
     internal init(tasks: [HomeData.Task]) {
         self.tasks = tasks
+        self.title = HomeTitleFactory.makeTasksTitle()
     }
 
     internal var body: some View {
-        HomeSection(title: "Pending Tasks") {
+        HomeSection(title: title) {
             if tasks.isEmpty {
                 HomeEmptyCard(title: "You are all caught up")
             } else {
@@ -90,7 +92,7 @@ internal struct HomeSection<Content: View>: View {
     internal var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(title)
-                .font(.headline)
+                .font(DSFont.csFideladrawn(size: 32))
                 .foregroundStyle(.primary)
 
             content()

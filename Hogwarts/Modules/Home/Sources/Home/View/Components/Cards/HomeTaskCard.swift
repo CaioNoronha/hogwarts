@@ -25,7 +25,7 @@ internal struct HomeTaskCard: View {
             }
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
 
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 3) {
                 HStack(spacing: 8) {
                     DSIcon.snitch
                         .resizable()
@@ -40,7 +40,7 @@ internal struct HomeTaskCard: View {
                 }
 
                 Text(subtitle)
-                    .font(DSFont.laughTales(size: 12))
+                    .font(DSFont.crimsonTextRegular(size: 11))
                     .foregroundStyle(.black.opacity(0.7))
                     .lineLimit(2)
                     .padding(.leading, 32)
@@ -53,7 +53,7 @@ internal struct HomeTaskCard: View {
         .frame(height: 96)
         .overlay {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .stroke(DSColor.goldDark, lineWidth: 2.5)
+                .stroke(DSColor.goldDark, lineWidth: 8)
         }
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
     }

@@ -73,11 +73,23 @@ public extension HomeData {
             tasks: [
                 Task(
                     title: "Finish Herbology essay",
-                    description: "Write two scrolls about magical water plants."
+                    description: "Write two complete scrolls about magical water plants and compare their healing properties before tomorrow's morning lesson."
                 ),
                 Task(
                     title: "Pack Quidditch uniform",
-                    description: "Practice starts after your last class."
+                    description: "Practice starts right after your last class, so remember your gloves, broom kit, and the Gryffindor training notes."
+                ),
+                Task(
+                    title: "Return library book",
+                    description: "Madam Pince expects the borrowed volume on advanced charms back before sunset, and the pages must remain untouched."
+                ),
+                Task(
+                    title: "Prepare potion ingredients",
+                    description: "Gather moonstone powder, dried nettles, and a fresh vial before tonight's potions exercise in the dungeon classroom."
+                ),
+                Task(
+                    title: "Answer owl correspondence",
+                    description: "Three letters are waiting in your trunk, and one of them appears to be marked with unusual Ministry wax."
                 )
             ]
         )
