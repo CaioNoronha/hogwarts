@@ -8,15 +8,24 @@ let package = Package(
     platforms: [
         .iOS(.v18)
     ],
+    //Products
     products: [
         .library(
             name: "Home",
             targets: ["Home"]
         ),
     ],
+    //Dependencies
+    dependencies: [
+        .package(path: "../DesignSystem")
+    ],
+    //Targets
     targets: [
         .target(
-            name: "Home"
+            name: "Home",
+            dependencies: [
+                .product(name: "DesignSystem", package: "DesignSystem")
+            ]
         ),
         .testTarget(
             name: "HomeTests",

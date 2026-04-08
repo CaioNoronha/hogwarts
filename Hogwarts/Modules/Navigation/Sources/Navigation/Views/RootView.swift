@@ -1,5 +1,6 @@
 import SwiftUI
 import DesignSystem
+import Home
 
 public struct RootView: View {
     
@@ -12,7 +13,7 @@ public struct RootView: View {
     public var body: some View {
         TabView(selection: $selectedTab) {
             Tab("Home", image: DSIcon.Name.castle, value: AppTab.home) {
-                ComingSoonView(title: "Home", icon: DSIcon.castle)
+                HomeFeature()
             }
             
             Tab("Map", image: DSIcon.Name.map, value: AppTab.map) {

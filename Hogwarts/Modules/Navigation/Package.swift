@@ -14,13 +14,15 @@ let package = Package(
             targets: ["Navigation"]
         ),
     ], dependencies: [
-        .package(path: "../DesignSystem")
+        .package(path: "../DesignSystem"),
+        .package(path: "../Home")
     ],
     targets: [
         .target(
             name: "Navigation",
             dependencies: [
-                .product(name: "DesignSystem", package: "DesignSystem")
+                .product(name: "DesignSystem", package: "DesignSystem"),
+                .product(name: "Home", package: "Home")
             ]
         ),
         .testTarget(
