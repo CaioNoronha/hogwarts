@@ -11,16 +11,16 @@ public struct RootView: View {
     //MARK: - Body
     public var body: some View {
         TabView(selection: $selectedTab) {
-            Tab("Home", systemImage: DSIcon.homeName, value: AppTab.home) {
-                ComingSoonView(title: "Home", icon: DSIcon.home)
+            Tab("Home", image: DSIcon.Name.castle, value: AppTab.home) {
+                ComingSoonView(title: "Home", icon: DSIcon.castle)
             }
             
-            Tab("Tasks", systemImage: DSIcon.tasksName, value: AppTab.tasks) {
-                ComingSoonView(title: "Tasks", icon: DSIcon.tasks)
+            Tab("Tasks", image: DSIcon.Name.map, value: AppTab.tasks) {
+                ComingSoonView(title: "Tasks", icon: DSIcon.map)
             }
 
-            Tab("Profile", systemImage: DSIcon.personFullName, value: AppTab.profile) {
-                ComingSoonView(title: "Profile", icon: DSIcon.personFull)
+            Tab("Profile", image: DSIcon.Name.hat, value: AppTab.profile) {
+                ComingSoonView(title: "Profile", icon: DSIcon.hat)
             }
             
             Tab(value: AppTab.search, role: .search) {
