@@ -15,12 +15,16 @@ public struct RootView: View {
                 ComingSoonView(title: "Home", icon: DSIcon.castle)
             }
             
-            Tab("Tasks", image: DSIcon.Name.map, value: AppTab.tasks) {
-                ComingSoonView(title: "Tasks", icon: DSIcon.map)
+            Tab("Map", image: DSIcon.Name.map, value: AppTab.map) {
+                ComingSoonView(title: "Map", icon: DSIcon.map)
+            }
+            
+            Tab("Tasks", image: DSIcon.Name.snitch, value: AppTab.tasks) {
+                ComingSoonView(title: "Tasks", icon: DSIcon.snitch)
             }
 
-            Tab("Profile", image: DSIcon.Name.hat, value: AppTab.profile) {
-                ComingSoonView(title: "Profile", icon: DSIcon.hat)
+            Tab("Profile", image: DSIcon.Name.glasses, value: AppTab.profile) {
+                ComingSoonView(title: "Profile", icon: DSIcon.glasses)
             }
             
             Tab(value: AppTab.search, role: .search) {

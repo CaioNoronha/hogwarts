@@ -10,6 +10,7 @@ public enum DSIcon {
         public static let search = "magnifying_glass"
         public static let map = "marauders_map"
         public static let hat = "sorting_hat"
+        public static let snitch = "gold_snitch"
     }
     
     //Icons
@@ -19,5 +20,6 @@ public enum DSIcon {
     public static var search: Image { Image(Name.search, bundle: .main) }
     public static var map: Image { Image(Name.map, bundle: .main) }
     public static var hat: Image { Image(Name.hat, bundle: .main) }
+    public static var snitch: Image { Image(Name.snitch, bundle: .main) }
 
 }

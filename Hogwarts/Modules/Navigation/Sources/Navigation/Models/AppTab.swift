@@ -2,6 +2,7 @@ import Foundation
 
 enum AppTab: String, CaseIterable, Identifiable {
     case home
+    case map
     case tasks
     case profile
     case search
@@ -12,6 +13,8 @@ enum AppTab: String, CaseIterable, Identifiable {
         switch self {
         case .home:
             "Home"
+        case .map:
+            "Map"
         case .tasks:
             "Tasks"
         case .profile:
