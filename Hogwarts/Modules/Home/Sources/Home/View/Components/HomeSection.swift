@@ -12,10 +12,7 @@ internal struct HomeClassesSection: View {
     internal var body: some View {
         HomeSection(title: "Today's Classes") {
             ForEach(classes, id: \.name) { item in
-                HomeInfoCard(
-                    title: item.name,
-                    subtitle: "\(item.time) • \(item.location)"
-                )
+                HomeClassCard(title: item.name, subtitle: "\(item.time) • \(item.location)")
             }
         }
     }
@@ -73,18 +70,7 @@ internal struct HomeTasksSection: View {
                 HomeEmptyCard(title: "You are all caught up")
             } else {
                 ForEach(tasks, id: \.title) { item in
-                    HomeInfoCard(
-                        title: item.title,
-                        subtitle: item.description,
-                        backgroundColor: Color(red: 0.95, green: 0.90, blue: 0.78),
-                        backgroundImageName: DSImage.Name.parchment,
-                        height: 96,
-                        titleColor: Color(red: 0.46, green: 0.33, blue: 0.10),
-                        titleFontSize: 20,
-                        subtitleFontSize: 12,
-                        titleIcon: DSIcon.snitch,
-                        contentVerticalPadding: 6
-                    )
+                    HomeTaskCard(title: item.title, subtitle: item.description)
                 }
             }
         }

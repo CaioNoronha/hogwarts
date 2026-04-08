@@ -2,17 +2,13 @@ import SwiftUI
 import CoreText
 
 public enum DSFont {
-    public enum Name {
-        public static let laughTalesFile = "laugh_tales"
-        public static let laughTales = "LaughTales"
-    }
 
     public static func laughTales(size: CGFloat) -> Font {
-        .custom(Name.laughTales, size: size)
+        .custom("LaughTales", size: size)
     }
 
     public static func registerFonts() {
-        registerFont(named: Name.laughTalesFile, extension: "otf")
+        registerFont(named: "laugh_tales", extension: "otf")
     }
 
     private static func registerFont(named name: String, extension ext: String) {
