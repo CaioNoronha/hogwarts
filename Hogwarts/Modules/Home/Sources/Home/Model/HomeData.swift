@@ -58,6 +58,16 @@ public extension HomeData {
                     title: "Visit the Owlery",
                     description: "Your latest letter is ready to be sent before curfew.",
                     image: "owlery"
+                ),
+                Suggestion(
+                    title: "Explore the Forbidden Forest",
+                    description: "Hagrid left a clue near the entrance for your next magical stop.",
+                    image: "forbidden_forest"
+                ),
+                Suggestion(
+                    title: "Spend time at the Great Hall",
+                    description: "Today's enchanted menu is already being served for the houses.",
+                    image: "great_hall"
                 )
             ],
             tasks: [

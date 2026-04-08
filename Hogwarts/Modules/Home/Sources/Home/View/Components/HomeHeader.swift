@@ -7,7 +7,7 @@ internal struct HomeHeader: View {
     internal var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Welcome back, wizard")
-                .font(.system(.largeTitle, design: .serif, weight: .bold))
+                .font(DSFont.laughTales(size: 36))
                 .foregroundStyle(DSColor.primary)
 
             Text("Your day at Hogwarts is organized right here.")
