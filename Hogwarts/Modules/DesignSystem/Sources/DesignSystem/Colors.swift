@@ -1,13 +1,7 @@
 import SwiftUI
 
-public extension Color {
-    static let ds = Colors()
-}
-
-public struct Colors: Sendable {
-    public init() {}
-
-    public var background: Color { Color("background", bundle: .main) }
-    public var primary: Color { Color("primary_1", bundle: .main) }
-    public var secondary: Color { Color("secondary_1", bundle: .main) }
+public enum DSColor {
+    public static var background: Color { Color("background", bundle: .main) }
+    public static var primary: Color { Color("primary_1", bundle: .main) }
+    public static var secondary: Color { Color("secondary_1", bundle: .main) }
 }

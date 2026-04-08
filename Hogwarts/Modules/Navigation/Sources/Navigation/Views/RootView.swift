@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 
 public struct RootView: View {
     
@@ -10,20 +11,20 @@ public struct RootView: View {
     //MARK: - Body
     public var body: some View {
         TabView(selection: $selectedTab) {
-            Tab("Home", systemImage: "house", value: AppTab.home) {
-                ComingSoonView(title: "Home", systemImage: "house")
+            Tab("Home", systemImage: DSIcon.homeName, value: AppTab.home) {
+                ComingSoonView(title: "Home", icon: DSIcon.home)
             }
             
-            Tab("Tasks", systemImage: "checklist", value: AppTab.tasks) {
-                ComingSoonView(title: "Tasks", systemImage: "checklist")
+            Tab("Tasks", systemImage: DSIcon.tasksName, value: AppTab.tasks) {
+                ComingSoonView(title: "Tasks", icon: DSIcon.tasks)
             }
 
-            Tab("Profile", systemImage: "gift", value: AppTab.profile) {
-                ComingSoonView(title: "Profile", systemImage: "person.crop.circle")
+            Tab("Profile", systemImage: DSIcon.personFullName, value: AppTab.profile) {
+                ComingSoonView(title: "Profile", icon: DSIcon.personFull)
             }
             
             Tab(value: AppTab.search, role: .search) {
-                ComingSoonView(title: "Search", systemImage: "magnifyingglass")
+                ComingSoonView(title: "Search", icon: DSIcon.search)
             }
         }
     }

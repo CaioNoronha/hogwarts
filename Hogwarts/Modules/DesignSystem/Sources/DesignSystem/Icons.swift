@@ -1,13 +1,15 @@
 import SwiftUI
 
-public extension Image {
-    static let icon = Icons()
-}
+public enum DSIcon {
+    //Names
+    public static let homeName = "house"
+    public static let tasksName = "checklist"
+    public static let personFullName = "person.crop.circle"
+    public static let searchName = "magnifyingglass"
 
-public struct Icons: Sendable {
-    public init() {}
-
-    public var home: Image { Image("house") }
-    public var profile: Image { Image("profile") }
-    public var search: Image { Image("search") }
+    //Images
+    public static var home: Image { Image(systemName: homeName) }
+    public static var tasks: Image { Image(systemName: tasksName) }
+    public static var personFull: Image { Image(systemName: personFullName) }
+    public static var search: Image { Image(systemName: searchName) }
 }

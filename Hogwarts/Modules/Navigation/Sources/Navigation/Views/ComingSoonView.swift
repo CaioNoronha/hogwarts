@@ -2,15 +2,17 @@ import SwiftUI
 
 struct ComingSoonView: View {
     let title: String
-    let systemImage: String
+    let icon: Image
 
     var body: some View {
-        ZStack {
-            ContentUnavailableView(
-                title,
-                systemImage: systemImage,
-                description: Text("Coming soon")
-            )
+        ContentUnavailableView {
+            Label {
+                Text(title)
+            } icon: {
+                icon
+            }
+        } description: {
+            Text("Coming soon")
         }
     }
 }

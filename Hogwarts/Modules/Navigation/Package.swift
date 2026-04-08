@@ -13,10 +13,15 @@ let package = Package(
             name: "Navigation",
             targets: ["Navigation"]
         ),
+    ], dependencies: [
+        .package(path: "../DesignSystem")
     ],
     targets: [
         .target(
-            name: "Navigation"
+            name: "Navigation",
+            dependencies: [
+                .product(name: "DesignSystem", package: "DesignSystem")
+            ]
         ),
         .testTarget(
             name: "NavigationTests",
