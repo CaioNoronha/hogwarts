@@ -3,27 +3,43 @@ import DesignSystem
 
 internal struct HomeClassCard: View {
     private let title: String
-    private let subtitle: String
+    private let time: String
+    private let imageName: String
 
-    internal init(title: String, subtitle: String) {
+    internal init(title: String, time: String, location: String, imageName: String) {
         self.title = title
-        self.subtitle = subtitle
+        self.time = time
+        self.imageName = imageName
     }
 
     internal var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(title)
-                .font(DSFont.laughTales(size: 24))
-                .foregroundStyle(.black)
-                .lineLimit(1)
+        ZStack(alignment: .bottom) {
+            Image(imageName, bundle: .main)
+                .resizable()
+                .scaledToFill()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-            Text(subtitle)
-                .font(DSFont.laughTales(size: 16))
-                .foregroundStyle(.black.opacity(0.7))
-                .lineLimit(2)
+            LinearGradient(
+                colors: [.clear, .black.opacity(0.55)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+
+            VStack(spacing: 4) {
+                Text(title)
+                    .font(DSFont.laughTales(size: 14))
+                
+                Text(time)
+                    .font(DSFont.crimsonTextRegular(size: 12))
+            }
+            .lineLimit(1)
+            .multilineTextAlignment(.center)
+            .foregroundStyle(.white)
+            .padding(.horizontal, 16)
+            .padding(.bottom, 20)
+            .frame(maxWidth: .infinity, alignment: .center)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(16)
-        .background(.white, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .frame(width: 160, height: 270)
+        .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
     }
 }

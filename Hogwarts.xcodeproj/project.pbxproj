@@ -44,6 +44,7 @@
 				Modules/Navigation,
 				Modules/Network,
 				Modules/Search,
+				Modules/Tasks,
 				Modules/Utils,
 			);
 			target = 300EFE722F841119009E1FE2 /* Hogwarts */;

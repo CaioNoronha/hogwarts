@@ -1,4 +1,5 @@
 import Foundation
+import DesignSystem
 
 public struct HomeData {
  
@@ -6,11 +7,13 @@ public struct HomeData {
         public let name: String
         public let time: String
         public let location: String
+        public let image: String
 
-        public init(name: String, time: String, location: String) {
+        public init(name: String, time: String, location: String, image: String) {
             self.name = name
             self.time = time
             self.location = location
+            self.image = image
         }
     }
     
@@ -50,8 +53,33 @@ public struct HomeData {
 public extension HomeData {
     static func mock() -> HomeData {
         .init(
-            classes: [ Class(name: "Potions", time: "16h", location: "Dungeon Classroom"),
-                       Class(name: "Defense Against the Dark Arts", time: "14h", location: "Tower Wing")
+            classes: [
+
+                Class(
+                    name: "D.A. Dark Arts",
+                    time: "10h",
+                    location: "Defence Classroom",
+                    image: DSImage.Name.darkArts
+                ),
+                Class(
+                    name: "Charms",
+                    time: "14h",
+                    location: "Charms Corridor",
+                    image: DSImage.Name.spells
+                ),
+                Class(
+                    name: "Transmutation",
+                    time: "16h",
+                    location: "Library",
+                    image: DSImage.Name.books
+                ),
+                Class(
+                    name: "Astronomy",
+                    time: "21h",
+                    location: "Astronomy Tower",
+                    image: DSImage.Name.astrology
+                ),
+                
             ],
             suggestions: [
                 Suggestion(
@@ -72,24 +100,20 @@ public extension HomeData {
             ],
             tasks: [
                 Task(
-                    title: "Finish Herbology essay",
-                    description: "Write two complete scrolls about magical water plants and compare their healing properties before tomorrow's morning lesson."
+                    title: "Finish the Herbology essay",
+                    description: "Complete the two-roll essay on magical water plants and include Professor Sprout's notes before tomorrow morning's class."
                 ),
                 Task(
-                    title: "Pack Quidditch uniform",
-                    description: "Practice starts right after your last class, so remember your gloves, broom kit, and the Gryffindor training notes."
+                    title: "Review Transfiguration notes",
+                    description: "Read over the lesson on switching spells and mark the passages Professor McGonagall said would return in the next practical exercise."
                 ),
                 Task(
-                    title: "Return library book",
-                    description: "Madam Pince expects the borrowed volume on advanced charms back before sunset, and the pages must remain untouched."
+                    title: "Return the Charms textbook",
+                    description: "Take your borrowed copy back to the library before supper, and make sure the lending slip is signed at Madam Pince's desk."
                 ),
                 Task(
-                    title: "Prepare potion ingredients",
-                    description: "Gather moonstone powder, dried nettles, and a fresh vial before tonight's potions exercise in the dungeon classroom."
-                ),
-                Task(
-                    title: "Answer owl correspondence",
-                    description: "Three letters are waiting in your trunk, and one of them appears to be marked with unusual Ministry wax."
+                    title: "Prepare Potions ingredients",
+                    description: "Set aside moonstone powder, dried nettles, and a clean vial for tomorrow's draught assignment in the dungeon classroom."
                 )
             ]
         )

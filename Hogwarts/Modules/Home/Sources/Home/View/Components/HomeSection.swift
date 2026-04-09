@@ -11,8 +11,17 @@ internal struct HomeClassesSection: View {
 
     internal var body: some View {
         HomeSection(title: "Today's Classes") {
-            ForEach(classes, id: \.name) { item in
-                HomeClassCard(title: item.name, subtitle: "\(item.time) • \(item.location)")
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(alignment: .top, spacing: 16) {
+                    ForEach(classes, id: \.name) { item in
+                        HomeClassCard(
+                            title: item.name,
+                            time: item.time,
+                            location: item.location,
+                            imageName: item.image
+                        )
+                    }
+                }
             }
         }
     }
