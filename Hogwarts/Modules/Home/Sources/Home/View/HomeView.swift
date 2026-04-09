@@ -2,6 +2,7 @@ import SwiftUI
 import DesignSystem
 
 public struct HomeView: View {
+    
     //Attributes
     private let viewModel: any HomeViewModelProtocol
 

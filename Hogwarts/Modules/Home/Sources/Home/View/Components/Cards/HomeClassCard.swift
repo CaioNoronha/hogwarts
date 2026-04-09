@@ -2,6 +2,8 @@ import SwiftUI
 import DesignSystem
 
 internal struct HomeClassCard: View {
+    
+    //Attributes
     private let title: String
     private let time: String
     private let imageName: String
@@ -12,6 +14,7 @@ internal struct HomeClassCard: View {
         self.imageName = imageName
     }
 
+    //MARK: - Body
     internal var body: some View {
         ZStack(alignment: .bottom) {
             Image(imageName, bundle: .main)

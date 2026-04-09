@@ -2,12 +2,15 @@ import SwiftUI
 import DesignSystem
 
 internal struct HomeSuggestionCard: View {
+    
+    //Attributes
     private let suggestion: HomeData.Suggestion
 
     internal init(suggestion: HomeData.Suggestion) {
         self.suggestion = suggestion
     }
 
+    //MARK: - Body
     internal var body: some View {
         ZStack(alignment: .bottomLeading) {
             Image(suggestion.image, bundle: .main)

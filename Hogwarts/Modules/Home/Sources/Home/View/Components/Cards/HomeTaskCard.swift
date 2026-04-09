@@ -2,6 +2,8 @@ import SwiftUI
 import DesignSystem
 
 internal struct HomeTaskCard: View {
+    
+    //Attributes
     private let title: String
     private let subtitle: String
 
@@ -10,6 +12,7 @@ internal struct HomeTaskCard: View {
         self.subtitle = subtitle
     }
 
+    //MARK: - Body
     internal var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20, style: .continuous)

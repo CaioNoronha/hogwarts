@@ -2,12 +2,15 @@ import SwiftUI
 import DesignSystem
 
 internal struct HomeEmptyCard: View {
+    
+    //Attributes
     private let title: String
 
     internal init(title: String) {
         self.title = title
     }
 
+    //MARK: - Body
     internal var body: some View {
         Text(title)
             .font(.subheadline)

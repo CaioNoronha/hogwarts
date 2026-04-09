@@ -3,12 +3,15 @@ import DesignSystem
 
 // MARK: - Classes Section
 internal struct HomeClassesSection: View {
+    
+    //Attributes
     private let classes: [HomeData.Class]
 
     internal init(classes: [HomeData.Class]) {
         self.classes = classes
     }
 
+    //Body
     internal var body: some View {
         HomeSection(title: "Today's Classes") {
             ScrollView(.horizontal, showsIndicators: false) {
@@ -29,6 +32,8 @@ internal struct HomeClassesSection: View {
 
 // MARK: - Suggestions Section
 internal struct HomeSuggestionsSection: View {
+    
+    //Attributes
     private let suggestions: [HomeData.Suggestion]
     @State private var selectedIndex: Int = 0
 
@@ -36,6 +41,7 @@ internal struct HomeSuggestionsSection: View {
         self.suggestions = suggestions
     }
 
+    //Body
     internal var body: some View {
         HomeSection(title: "Suggestions") {
             if suggestions.isEmpty {
@@ -67,6 +73,8 @@ internal struct HomeSuggestionsSection: View {
 
 // MARK: - Tasks Section
 internal struct HomeTasksSection: View {
+    
+    //Attributes
     private let tasks: [HomeData.Task]
     private let title: String
 
@@ -75,6 +83,7 @@ internal struct HomeTasksSection: View {
         self.title = HomeTitleFactory.makeTasksTitle()
     }
 
+    //Body
     internal var body: some View {
         HomeSection(title: title) {
             if tasks.isEmpty {
@@ -90,6 +99,8 @@ internal struct HomeTasksSection: View {
 
 // MARK: - Home Section
 internal struct HomeSection<Content: View>: View {
+    
+    //Attributes
     private let title: String
     @ViewBuilder private let content: () -> Content
 
@@ -98,6 +109,7 @@ internal struct HomeSection<Content: View>: View {
         self.content = content
     }
 
+    //Body
     internal var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(title)

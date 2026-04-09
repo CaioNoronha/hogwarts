@@ -10,6 +10,7 @@ public enum DSImage {
         public static let books = "books"
         public static let broom = "vassoura"
         public static let darkArts = "dark_arts"
+        public static let goldenLine = "golden_line"
         public static let herbology = "herbology"
         public static let potion = "potion"
         public static let spells = "spells"
@@ -26,6 +27,7 @@ public enum DSImage {
     public static var books: Image { Image(Name.books, bundle: .main) }
     public static var broom: Image { Image(Name.broom, bundle: .main) }
     public static var darkArts: Image { Image(Name.darkArts, bundle: .main) }
+    public static var goldenLine: Image { Image(Name.goldenLine, bundle: .main) }
     public static var herbology: Image { Image(Name.herbology, bundle: .main) }
     public static var potion: Image { Image(Name.potion, bundle: .main) }
     public static var spells: Image { Image(Name.spells, bundle: .main) }
