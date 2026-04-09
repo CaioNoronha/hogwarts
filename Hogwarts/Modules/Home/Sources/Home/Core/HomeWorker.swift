@@ -14,6 +14,6 @@ public struct HomeWorker: HomeWorkerProtocol, Sendable {
 
     public func fetchHomeData() async throws -> HomeData {
         let request = HomeRequest()
-        return try await networkManager.executeMockRequest(request.value, responseType: HomeData.self)
+        return try await networkManager.executeRequest(request: request.value, responseType: HomeData.self)
     }
 }

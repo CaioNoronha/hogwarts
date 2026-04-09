@@ -8,6 +8,7 @@ public protocol HomeViewModelProtocol: AnyObject {
     var errorMessage: String? { get }
 
     func loadHome() async
+    func clearError()
 }
 
 @MainActor
@@ -34,5 +35,9 @@ public final class HomeViewModel: HomeViewModelProtocol {
         } catch {
             errorMessage = error.localizedDescription
         }
+    }
+
+    public func clearError() {
+        errorMessage = nil
     }
 }

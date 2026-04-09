@@ -1,5 +1,6 @@
 import SwiftUI
 import Network
+import Utils
 
 public struct HomeFeature: View {
 
@@ -8,7 +9,7 @@ public struct HomeFeature: View {
     @State private var viewModel: HomeViewModel
 
     public init() {
-        let networkManager = NetworkManager(baseURL: URL(string: "https://hogwarts.local")!)
+        let networkManager = MockNetworkManager()
         let worker = HomeWorker(networkManager: networkManager)
         _viewModel = State(initialValue: HomeViewModel(worker: worker))
     }

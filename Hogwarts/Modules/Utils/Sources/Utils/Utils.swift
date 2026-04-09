@@ -9,7 +9,11 @@ public struct MockNetworkManager: NetworkManagerProtocol {
             throw NetworkError.mockRouteNotFound(request.routeKey)
         }
 
-        guard let url = Bundle.module.url(forResource: mockFileName, withExtension: "json", subdirectory: "Mocks") else {
+        let resourceURL =
+            Bundle.module.url(forResource: mockFileName, withExtension: "json") ??
+            Bundle.module.url(forResource: mockFileName, withExtension: "json", subdirectory: "Mocks")
+
+        guard let url = resourceURL else {
             throw NetworkError.mockRouteNotFound(mockFileName)
         }
 
@@ -22,5 +26,12 @@ public struct MockNetworkManager: NetworkManagerProtocol {
     ) async throws -> Response {
         let data = try await executeRequest(request: request)
         return try JSONParser.parse(data, from: responseType)
+    }
+
+    public func executeMockRequest<Response: Decodable>(
+        _ request: NetworkRequest,
+        responseType: Response.Type
+    ) async throws -> Response {
+        try await executeRequest(request: request, responseType: responseType)
     }
 }

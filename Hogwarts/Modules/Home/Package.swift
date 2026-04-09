@@ -18,7 +18,8 @@ let package = Package(
     //Dependencies
     dependencies: [
         .package(path: "../DesignSystem"),
-        .package(path: "../Network")
+        .package(path: "../Network"),
+        .package(path: "../Utils")
     ],
     //Targets
     targets: [
@@ -26,7 +27,8 @@ let package = Package(
             name: "Home",
             dependencies: [
                 .product(name: "DesignSystem", package: "DesignSystem"),
-                .product(name: "Network", package: "Network")
+                .product(name: "Network", package: "Network"),
+                .product(name: "Utils", package: "Utils")
             ]
         ),
         .testTarget(

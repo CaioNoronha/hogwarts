@@ -1,13 +1,14 @@
 import SwiftUI
+import Observation
 import DesignSystem
 
 public struct HomeView: View {
     
     //Attributes
-    private let viewModel: HomeViewModel
+    @Bindable private var viewModel: HomeViewModel
 
     public init(viewModel: HomeViewModel) {
-        self.viewModel = viewModel
+        self._viewModel = Bindable(viewModel)
     }
 
     // MARK: - Body
@@ -34,6 +35,21 @@ public struct HomeView: View {
                 ProgressView()
                     .tint(DSColor.parchment)
             }
+        }
+        .alert(
+            "Failed to load Home",
+            isPresented: Binding(
+                get: { viewModel.errorMessage != nil },
+                set: { isPresented in
+                    if isPresented == false {
+                        viewModel.clearError()
+                    }
+                }
+            )
+        ) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(viewModel.errorMessage ?? "Unknown error")
         }
         .task {
             if viewModel.homeData.classes.isEmpty,
