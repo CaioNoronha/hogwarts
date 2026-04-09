@@ -1,45 +1,45 @@
 {
   "classes": [
     {
-      "name": "Potions",
-      "time": "09h",
-      "location": "Dungeon Classroom",
-      "image": "potion"
+      "name": "Astronomy",
+      "time": "08h",
+      "location": "Astronomy Tower",
+      "image": "astrology"
     },
     {
-      "name": "Herbology",
-      "time": "11h",
-      "location": "Greenhouse Three",
-      "image": "herbology"
+      "name": "Ancient Runes",
+      "time": "10h",
+      "location": "North Wing",
+      "image": "books"
     },
     {
-      "name": "Flying Lesson",
-      "time": "15h",
-      "location": "Training Grounds",
-      "image": "vassoura"
+      "name": "D.A. Dark Arts",
+      "time": "14h",
+      "location": "Defence Classroom",
+      "image": "dark_arts"
     },
     {
-      "name": "Study Hall",
-      "time": "19h",
-      "location": "Library Annex",
+      "name": "History of Magic",
+      "time": "20h",
+      "location": "History Classroom",
       "image": "books"
     }
   ],
   "suggestions": [
     {
-      "title": "Review potion notes before dusk",
-      "description": "Professor Snape moved tomorrow's brewing instructions to the front table in the dungeon.",
+      "title": "Stop by the Great Hall early",
+      "description": "The enchanted ceiling is clear tonight, and several professors are discussing the week's observations.",
       "image": "great_hall"
     },
     {
-      "title": "Walk by the greenhouses",
-      "description": "The mandrakes are quieter today, and Professor Sprout left a short reading list near the entrance.",
-      "image": "forbidden_forest"
+      "title": "Check the library reserve shelf",
+      "description": "A restricted text on protective charms was returned this morning and may still be available.",
+      "image": "owlery"
     },
     {
-      "title": "Send an owl before supper",
-      "description": "Several students are posting letters before curfew, and the Owlery is still calm this afternoon.",
-      "image": "owlery"
+      "title": "Take the long path back",
+      "description": "Hagrid mentioned that the path by the forest edge is quiet and bright before sunset.",
+      "image": "forbidden_forest"
     }
   ],
   "tasks": [

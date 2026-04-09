@@ -6,14 +6,16 @@ internal struct HomeClassesSection: View {
     
     //Attributes
     private let classes: [HomeData.Class]
+    private let title: String
 
     internal init(classes: [HomeData.Class]) {
         self.classes = classes
+        self.title = HomeTitleFactory.makeClassesTitle()
     }
 
     //Body
     internal var body: some View {
-        HomeSection(title: "Today's Classes") {
+        HomeSection(title: title) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 16) {
                     ForEach(classes, id: \.name) { item in
@@ -35,15 +37,17 @@ internal struct HomeSuggestionsSection: View {
     
     //Attributes
     private let suggestions: [HomeData.Suggestion]
+    private let title: String
     @State private var selectedIndex: Int = 0
 
     internal init(suggestions: [HomeData.Suggestion]) {
         self.suggestions = suggestions
+        self.title = HomeTitleFactory.makeSuggestionsTitle()
     }
 
     //Body
     internal var body: some View {
-        HomeSection(title: "Suggestions") {
+        HomeSection(title: title) {
             if suggestions.isEmpty {
                 HomeEmptyCard(title: "No suggestions for now")
             } else {

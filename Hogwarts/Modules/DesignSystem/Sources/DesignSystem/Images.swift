@@ -8,12 +8,13 @@ public enum DSImage {
         public static let background = "background"
         public static let astrology = "astrology"
         public static let books = "books"
-        public static let broom = "vassoura"
+        public static let broom = "broom"
         public static let darkArts = "dark_arts"
         public static let goldenLine = "golden_line"
         public static let herbology = "herbology"
         public static let potion = "potion"
         public static let spells = "spells"
+        public static let creatures = "creatures"
         public static let griffindor = "griffindor"
         public static let hufflepuff = "hufflepuff"
         public static let ravenclaw = "ravenclaw"
@@ -31,6 +32,7 @@ public enum DSImage {
     public static var herbology: Image { Image(Name.herbology, bundle: .main) }
     public static var potion: Image { Image(Name.potion, bundle: .main) }
     public static var spells: Image { Image(Name.spells, bundle: .main) }
+    public static var creatures: Image { Image(Name.creatures, bundle: .main) }
     public static var griffindor: Image { Image(Name.griffindor, bundle: .main) }
     public static var hufflepuff: Image { Image(Name.hufflepuff, bundle: .main) }
     public static var ravenclaw: Image { Image(Name.ravenclaw, bundle: .main) }

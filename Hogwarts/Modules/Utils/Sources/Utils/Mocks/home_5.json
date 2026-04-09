@@ -2,44 +2,44 @@
   "classes": [
     {
       "name": "Potions",
-      "time": "09h",
+      "time": "08h",
       "location": "Dungeon Classroom",
       "image": "potion"
     },
     {
       "name": "Herbology",
-      "time": "11h",
-      "location": "Greenhouse Three",
+      "time": "10h",
+      "location": "Greenhouse Two",
       "image": "herbology"
     },
     {
-      "name": "Flying Lesson",
-      "time": "15h",
-      "location": "Training Grounds",
-      "image": "vassoura"
+      "name": "Astronomy",
+      "time": "18h",
+      "location": "Astronomy Tower",
+      "image": "astrology"
     },
     {
-      "name": "Study Hall",
-      "time": "19h",
-      "location": "Library Annex",
-      "image": "books"
+      "name": "D.A. Dark Arts",
+      "time": "20h",
+      "location": "Defence Classroom",
+      "image": "dark_arts"
     }
   ],
   "suggestions": [
     {
-      "title": "Review potion notes before dusk",
-      "description": "Professor Snape moved tomorrow's brewing instructions to the front table in the dungeon.",
+      "title": "Spend the evening in the Great Hall",
+      "description": "The last dinner of the week is being served, and the hall is quieter before the weekend begins.",
       "image": "great_hall"
     },
     {
-      "title": "Walk by the greenhouses",
-      "description": "The mandrakes are quieter today, and Professor Sprout left a short reading list near the entrance.",
-      "image": "forbidden_forest"
+      "title": "Post any final letters home",
+      "description": "The Owlery is busiest on Fridays, and deliveries before the weekend are leaving soon.",
+      "image": "owlery"
     },
     {
-      "title": "Send an owl before supper",
-      "description": "Several students are posting letters before curfew, and the Owlery is still calm this afternoon.",
-      "image": "owlery"
+      "title": "Take a careful walk near the forest edge",
+      "description": "The grounds are peaceful tonight, and many students head there after lessons to clear their minds.",
+      "image": "forbidden_forest"
     }
   ],
   "tasks": [
