@@ -1,16 +1,16 @@
 import SwiftUI
+import Network
 
 public struct HomeFeature: View {
-    
+
     //Attributes
-    private let viewModel: any HomeViewModelProtocol
+
+    @State private var viewModel: HomeViewModel
 
     public init() {
-        self.viewModel = HomeViewModel()
-    }
-
-    init(viewModel: any HomeViewModelProtocol) {
-        self.viewModel = viewModel
+        let networkManager = NetworkManager(baseURL: URL(string: "https://hogwarts.local")!)
+        let worker = HomeWorker(networkManager: networkManager)
+        _viewModel = State(initialValue: HomeViewModel(worker: worker))
     }
 
     // MARK: - Body

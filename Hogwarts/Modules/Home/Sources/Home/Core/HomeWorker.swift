@@ -1,11 +1,19 @@
 import Foundation
+import Network
 
-public protocol HomeWorkerProtocol {
-    func fetchData(completion: @escaping (Result<[HomeData], Error>) -> Void)
+public protocol HomeWorkerProtocol: Sendable {
+    func fetchHomeData() async throws -> HomeData
 }
 
-public class HomeWorker: HomeWorkerProtocol {
-    public func fetchData(completion: @escaping (Result<[HomeData], any Error>) -> Void) {
-        <#code#>
+public struct HomeWorker: HomeWorkerProtocol, Sendable {
+    private let networkManager: any NetworkManagerProtocol
+
+    public init(networkManager: any NetworkManagerProtocol) {
+        self.networkManager = networkManager
+    }
+
+    public func fetchHomeData() async throws -> HomeData {
+        let request = HomeRequest()
+        return try await networkManager.executeMockRequest(request.value, responseType: HomeData.self)
     }
 }

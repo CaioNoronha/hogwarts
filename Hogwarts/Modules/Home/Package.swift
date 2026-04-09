@@ -17,14 +17,16 @@ let package = Package(
     ],
     //Dependencies
     dependencies: [
-        .package(path: "../DesignSystem")
+        .package(path: "../DesignSystem"),
+        .package(path: "../Network")
     ],
     //Targets
     targets: [
         .target(
             name: "Home",
             dependencies: [
-                .product(name: "DesignSystem", package: "DesignSystem")
+                .product(name: "DesignSystem", package: "DesignSystem"),
+                .product(name: "Network", package: "Network")
             ]
         ),
         .testTarget(

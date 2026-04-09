@@ -1,21 +1,38 @@
 import Foundation
+import Observation
 
-public protocol HomeViewModelProtocol {
-    var classes: [HomeData.Class] { get }
-    var suggestions: [HomeData.Suggestion] { get }
-    var tasks: [HomeData.Task] { get }
+@MainActor
+public protocol HomeViewModelProtocol: AnyObject {
+    var homeData: HomeData { get }
+    var isLoading: Bool { get }
+    var errorMessage: String? { get }
+
+    func loadHome() async
 }
 
+@MainActor
+@Observable
 public final class HomeViewModel: HomeViewModelProtocol {
     private let worker: any HomeWorkerProtocol
-    private let homeData: HomeData
 
-    public var classes: [HomeData.Class] { homeData.classes }
-    public var suggestions: [HomeData.Suggestion] { homeData.suggestions }
-    public var tasks: [HomeData.Task] { homeData.tasks }
+    public private(set) var homeData = HomeData(classes: [], suggestions: [], tasks: [])
+    public private(set) var isLoading = false
+    public private(set) var errorMessage: String?
 
-    public init(worker: any HomeWorkerProtocol = HomeWorker()) {
+    public init(worker: any HomeWorkerProtocol) {
         self.worker = worker
-        self.homeData = worker.fetchHomeData()
+    }
+
+    public func loadHome() async {
+        isLoading = true
+        errorMessage = nil
+
+        defer { isLoading = false }
+
+        do {
+            homeData = try await worker.fetchHomeData()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
     }
 }
